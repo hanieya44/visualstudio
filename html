@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorite Song</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Music & Motion</h1>
+    </header>
+
+    <main>
+        <div class="video-container">
+            <iframe width="560" height="315" 
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div id="container">
+            <div id="animate"></div>
+        </div>
+        <p><button onclick="myMove()">Click to Animate</button></p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    background-color: #121212; /* Dark theme */
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.video-container {
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid #3498db;
+    display: inline-block;
+}
+
+/* Animation Styles */
+#container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background: #333;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+#animate {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: #3498db;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+function myMove() {
+  let id = null;
+  const elem = document.getElementById("animate");   
+  let pos = 0;
+  clearInterval(id);
+  
+  // Update every 5 milliseconds
+  id = setInterval(frame, 5);
+  
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + "px"; 
+      elem.style.left = pos + "px"; 
+    }
+  }
+}
+
+Attachments area
+Preview YouTube video Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster)Preview YouTube video Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster)
